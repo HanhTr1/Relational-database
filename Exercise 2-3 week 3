@@ -16,3 +16,32 @@ select country.name as "country name", airport.name as "airport name"
 from airport, country
 where airport.iso_country = country.iso_country and country.name = "Iceland";
 Q2:
+select airport.name as "airport name" from airport where iso_country="FR"
+and type ="large_airport";
+Q3:
+select country.name as "country_name", airport.name as "airport_name"
+from country, airport
+where country.iso_country = airport.iso_country and country.continent ="AN";
+Q4:
+select elevation_ft from airport, game
+where location = ident and screen_name = "Heini";
+Q5:
+select elevation_ft * 0.3048 as elevation_m from airport, game
+where location = ident and screen_name = "Heini";
+Q6:
+select name from airport, game where location = ident and screen_name = "Ilkka";
+Q7:
+select country.name from airport, country, game where location=ident and airport.iso_country=country.iso_country 
+and screen_name="Ilkka";
+Q8:
+select name from goal, goal_reached, game
+where goal.id = game_id and game.id = goal_id and screen_name = "Heini";
+Q9:
+select airport.name from airport, game, goal, goal_reached
+where ident = location and game.id = game_id and goal.id = goal_id 
+and screen_name = "Ilkka" and goal.name = "CLOUDS";
+Q10:
+select country.name from country, airport, game, goal, goal_reached
+where airport.iso_country=country.iso_country and ident=location
+and game.id=game_id and goal.id=goal_id and screen_name= "Ilkka"
+and goal.name ="CLOUDS";
