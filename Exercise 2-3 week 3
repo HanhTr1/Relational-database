@@ -1,5 +1,5 @@
 #excercise 2
-select location from game where screen_name ="Vesa";
+select * from goal;
 select name from airport where iso_country="FI";
 select name from airport where iso_country = "FI" order by name asc;
 select name, type from airport where iso_country = "FI" order by type asc, name asc;
@@ -35,7 +35,7 @@ select country.name from airport, country, game where location=ident and airport
 and screen_name="Ilkka";
 Q8:
 select name from goal, goal_reached, game
-where goal.id = game_id and game.id = goal_id and screen_name = "Heini";
+where game.id = game_id and game.id = goal_id and screen_name = "Heini";
 Q9:
 select airport.name from airport, game, goal, goal_reached
 where ident = location and game.id = game_id and goal.id = goal_id 
